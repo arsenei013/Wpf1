@@ -1,0 +1,30 @@
+﻿<Window x:Class="Технология_WPF.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Текстовый редактор" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" FontSize="14">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать новый текст" Click="NewFile_Click"/>
+                <MenuItem Header="Открыть текст" Click="OpenFile_Click"/>
+                <MenuItem Header="Сохранить" Click="SaveFile_Click"/>
+                <Separator/>
+                <MenuItem Header="Выход" Click="Exit_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="#F0F0F0" Margin="0,2">
+            <Button Content="Создать новый документ" Click="NewFile_Click" 
+                    Margin="5" Padding="10,5" Background="#E1E1E1" FontWeight="Bold"/>
+        </StackPanel>
+
+        <TabControl x:Name="DocumentsTabControl" Grid.Row="2" Margin="5"/>
+    </Grid>
+</Window>
+
